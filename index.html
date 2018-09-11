@@ -439,7 +439,7 @@ function everyFrame (time) {
 			}
 	}
 
-	TWEEN.update(time)
+	TWEEN.update()
 
 	drawAll()
 
@@ -447,7 +447,8 @@ function everyFrame (time) {
 
 }
 
-	window.requestAnimFrame (everyFrame)
+
+window.requestAnimFrame (everyFrame)
 
 </script>
 
