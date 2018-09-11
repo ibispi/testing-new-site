@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+
+<head>
+	<title>Site Demo</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#c34343">
+	<meta name="theme-color" content="#c34343">
+	<script src="Tween.js"></script>
+</head>
+
+<canvas id="mainCanvas">Oh, no! Your browser does not support the HTML5 canvas tag!</canvas>
+
+<body>
+
+<script>
+
+
+var testing = {
+	["animationCanvas"] : {
+		["height"] : 200,
+		["width"] : 200,
+	},
+	["stepTime"] : [
+		0.5,
+		0.5,
+],
+	["anipart"] : [
+		{
+			["image"] : {
+				["offset"] : {
+					["xperc"] : 0,
+					["yperc"] : 0,
+				},
+				["width"] : 200,
+				["height"] : 200,
+				["spriteName"] : "bg",
+			},
+			["numbers"] : [
+				{
+					["xperc"] : 0,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["yperc"] : 0,
+					["r"] : 0,
+				},
+				{
+					["xperc"] : 0,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["r"] : 0,
+					["yperc"] : 0,
+				},
+],
+			["currentStatus"] : {
+				["xperc"] : 0,
+				["opacity"] : 1,
+				["r"] : 0,
+				["sy"] : 1,
+				["sx"] : 1,
+				["yperc"] : 0,
+			},
+		},
+		{
+			["image"] : {
+				["offset"] : {
+					["xperc"] : 0,
+					["yperc"] : 0,
+				},
+				["width"] : 200,
+				["height"] : 91,
+				["spriteName"] : "sea",
+			},
+			["currentStatus"] : {
+				["xperc"] : 0,
+				["opacity"] : 1,
+				["r"] : 0,
+				["sy"] : 1,
+				["sx"] : 1,
+				["yperc"] : 0.57,
+			},
+			["numbers"] : [
+				{
+					["xperc"] : 0,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["r"] : 0,
+					["yperc"] : 0.57,
+				},
+				{
+					["xperc"] : 0,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["yperc"] : 0.63,
+					["r"] : 0,
+				},
+],
+		},
+		{
+			["image"] : {
+				["offset"] : {
+					["xperc"] : 0.47014925373134,
+					["yperc"] : 0.50632911392405,
+				},
+				["width"] : 134,
+				["height"] : 79,
+				["spriteName"] : "lennyFace",
+			},
+			["currentStatus"] : {
+				["xperc"] : 0.475,
+				["opacity"] : 1,
+				["r"] : 0,
+				["sy"] : 1,
+				["sx"] : 1,
+				["yperc"] : 0.6,
+			},
+			["numbers"] : [
+				{
+					["xperc"] : 0.475,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["r"] : 0,
+					["yperc"] : 0.6,
+				},
+				{
+					["xperc"] : 0.475,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["yperc"] : 0.63,
+					["r"] : 0,
+				},
+],
+		},
+		{
+			["image"] : {
+				["offset"] : {
+					["xperc"] : 0.47222222222222,
+					["yperc"] : 0.51515151515152,
+				},
+				["width"] : 36,
+				["height"] : 33,
+				["spriteName"] : "ball",
+			},
+			["currentStatus"] : {
+				["xperc"] : 0.09,
+				["opacity"] : 1,
+				["r"] : 0,
+				["sy"] : 1,
+				["sx"] : 1,
+				["yperc"] : 0.855,
+			},
+			["numbers"] : [
+				{
+					["xperc"] : 0.09,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["r"] : 0,
+					["yperc"] : 0.855,
+				},
+				{
+					["xperc"] : 0.91,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["yperc"] : 0.88,
+					["r"] : 0,
+				},
+],
+		},
+		{
+			["image"] : {
+				["offset"] : {
+					["xperc"] : 0.95121951219512,
+					["yperc"] : 0.030769230769231,
+				},
+				["width"] : 41,
+				["height"] : 65,
+				["spriteName"] : "arrow",
+			},
+			["currentStatus"] : {
+				["xperc"] : 0.305,
+				["opacity"] : 1,
+				["r"] : 0,
+				["sy"] : 1,
+				["sx"] : 1,
+				["yperc"] : 0.22,
+			},
+			["numbers"] : [
+				{
+					["xperc"] : 0.305,
+					["sx"] : 1,
+					["fullCircle"] : "",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["r"] : 0,
+					["yperc"] : 0.22,
+				},
+				{
+					["xperc"] : 0.305,
+					["sx"] : 1,
+					["fullCircle"] : "right",
+					["opacity"] : 1,
+					["sy"] : 1,
+					["yperc"] : 0.22,
+					["r"] : 3.1415926535898,
+				},
+],
+		},
+],
+}
+
+
+
+window.requestAnimFrame = window.requestAnimationFrame ||
+															 window.mozRequestAnimationFrame ||
+															 window.webkitRequestAnimationFrame ||
+															 window.msRequestAnimationFrame
+//defining important global variables
+var rectTable = []
+var canvas = document.getElementById("mainCanvas")
+var context = canvas.getContext('2d')
+context.imageSmoothingEnabled = false
+
+var topBorderPerc = 0.05 //this is a bit off as the size of rectangles is always gonna be bigger than it should
+var bottomBorderPerc = 0.05
+var rightBorderPerc = 0.05
+var leftBorderPerc = 0.05
+
+var menuStartsLeftPerc = 0.02
+var menuStartsBotPerc = 0.02//where the vertical menu text starts being drawn
+var menuWordSpacing = 0.02
+
+var rectNumHorizontal = 11
+var rectNumVertical = 6
+
+var rW = 0
+var rH = 0
+
+var imgOffset = 4
+
+var listOfAllAnimations = []
+var listOfAllImages = {} //so that images can be reused and not imported every single time...
+
+
+
+//this is where the current week folder would be loaded...
+//anipart lists are part of the animation table of all animated aniparts, because you want to be able to pause specific animations when you are not mousing over them!
+addAnimationRect(testing, 0,0, 3, 3, ["linear", "linear"])//..., anipartList)
+addAnimationRect(testing, 3,0, 2, 2, ["linear", "linear"])
+addAnimationRect(testing, 5,0, 1, 4, ["linear", "linear"])
+addAnimationRect(testing, 6,0, 5, 5, ["linear", "linear"])
+addAnimationRect(testing, 0,3, 5, 3, ["linear", "linear"])
+addAnimationRect(testing, 3,2, 2, 1, ["linear", "linear"])
+addAnimationRect(testing, 5,4, 1, 1, ["linear", "linear"])
+addAnimationRect(testing, 5,5, 6, 1, ["linear", "linear"])
+
+
+function importImg (imgName) {
+
+	//NOTE THE SOURCE WILL HAVE TO BE BASED ON THE CURRENT DATE!
+	if (listOfAllImages[imgName] == null) {
+		var tempImgSrc = imgName+".png"
+		listOfAllImages[imgName] = new Image()
+		listOfAllImages[imgName].src = tempImgSrc
+
+	}
+}
+
+//happens at the end of a tween
+function continueAnimating (animationTable) {
+
+	var nextStep = animationTable.currentStep + 1
+
+	if (animationTable.currentStep == animationTable["animation"]["stepTime"].length-1) {
+		nextStep = 0
+	}
+
+	if (animationTable.tweenList[animationTable.currentStep]==null){
+		animationTable.tweenList[animationTable.currentStep] = []
+
+	}
+
+	for (var i = 0; i < animationTable.animation.anipart.length; i++) {
+
+		if (animationTable.tweenList[animationTable.currentStep][i] == null) {
+		 animationTable.tweenList[animationTable.currentStep][i] = new TWEEN.Tween(animationTable.animation.anipart[i].currentStatus)
+				.to({ xperc: animationTable.animation.anipart[i]["numbers"][nextStep]["xperc"],
+							yperc: animationTable.animation.anipart[i]["numbers"][nextStep]["yperc"],
+							r: animationTable.animation.anipart[i]["numbers"][nextStep]["r"],
+							sx: animationTable.animation.anipart[i]["numbers"][nextStep]["sx"],
+							sy: animationTable.animation.anipart[i]["numbers"][nextStep]["sy"],
+							opacity: animationTable.animation.anipart[i]["numbers"][nextStep]["opacity"],
+						}, animationTable.animation.stepTime[animationTable.currentStep]*1000)
+				.onComplete(function() {
+						animationTable.currentStep = nextStep
+						continueAnimating (animationTable)
+				})
+				.start()
+
+		}
+		else {
+			animationTable.tweenList[animationTable.currentStep][i].start()
+
+		}
+
+	}
+
+	//NOTE, you have to store these tweens so you don't make a new one every thiem
+
+
+}
+function addAnimationRect(animationName, xRect, yRect, widthInRects, heightInRects, easingList) {
+
+	//NOTE this will have to add all the images of an animation, but for now it just adds one image...
+
+	//listOfAllAnimations.push ({img: "", xRect: xRect, yRect: yRect, widthInRects: widthInRects, heightInRects: heightInRects})
+	//listOfAllAnimations[listOfAllAnimations.length-1].img = new Image() //NOTE IMAGES ARE REUSABLE YOU DON'T HAVE TO LOAD THE SAME ONE MANY TIMES JUST ONCE!
+	//listOfAllAnimations[listOfAllAnimations.length-1].img.src = imgSrc
+
+	//NOTE WHEN ITERATING THROUGH ANIPARTS, START WITH 1!!! NOT ZERO, CAUSE LUA!
+	for (var i = 0; i < animationName.anipart.length; i++) {
+		importImg(animationName["anipart"][i]["image"]["spriteName"])
+	}
+
+	listOfAllAnimations.push ({["animation"]: testing, tweenList: [], ["currentStep"]:0, ["easingList"]:easingList, rectBased: true, xRect: xRect, yRect: yRect, widthInRects: widthInRects, heightInRects: heightInRects})
+
+	continueAnimating (listOfAllAnimations[listOfAllAnimations.length-1])
+
+	//you will have a list for all drawn aniparts which will have all the aniparts
+	//required by the animation and will use an image or add an image from source if
+	//the image hasn't been imported already and have, xperc, yperc, etc.
+
+//sprites will be loaded from one folder on the server (they'll all be in one place probably with names such as dd_mm_yyyy_description, for animation utility, on
+//the computer they'll be sorted in folders...)
+//in this function (function called addanimation) what will happen is there will be a name of the sprite in the anipartList and the program is gonna
+//look inside the table of already imported images and see if it has already been loaded - if so, load it from that table/list, if not
+//then just load it up from the server folder and add it to the list!
+
+//there will be no separate characters here, when i export the aniparts i will ignore the characters and export all the aniparts together probably!
+//although that may cause problems cause the characters are separately layered... acually it shouldn't cause problems! just layer the aniparts based on this...
+
+//aniparts relative position to the top left corner of their 'canvases' will be calculated by percentages, not pixels so that it can be scaled
+}
+
+function drawAnImage(image, x, y, xanim, yanim, oCanvasWidth, oCanvasHeight, imgwidth, imgheight, width, height, cx, cy, sx, sy, rotation, opacity ){
+
+	var newSx = width/oCanvasWidth
+	var newSy = height/oCanvasHeight
+
+	context.setTransform(sx, 0, 0, sy, xanim+x*width, yanim+y*height); // sets scale and origin
+	rotation = rotation
+	context.rotate(rotation);
+	context.globalAlpha = opacity
+	context.drawImage(image, -cx*imgwidth*newSx, -cy*imgheight*newSy, imgwidth*newSx, imgheight*newSy);
+	context.setTransform(1,0,0,1,0,0)
+	context.globalAlpha = 1.0
+}
+
+
+function drawAll () {
+
+	for (var i = 0; i < listOfAllAnimations.length; i++) {
+
+		for (var q = 0; q < listOfAllAnimations[i].animation.anipart.length; q++) {
+			listOfAllAnimations[i].animation.anipart[q].currentStatus
+
+			if (listOfAllAnimations[i].rectBased == true) {
+				drawAnImage(listOfAllImages[listOfAllAnimations[i].animation.anipart[q].image.spriteName],
+					listOfAllAnimations[i].animation.anipart[q].currentStatus.xperc,
+					listOfAllAnimations[i].animation.anipart[q].currentStatus.yperc,
+					rectTable[listOfAllAnimations[i]["xRect"]][listOfAllAnimations[i]["yRect"]]["x"]+imgOffset,
+					rectTable[listOfAllAnimations[i]["xRect"]][listOfAllAnimations[i]["yRect"]]["y"]+imgOffset,
+					listOfAllAnimations[i].animation.animationCanvas.width,
+					listOfAllAnimations[i].animation.animationCanvas.height,
+					listOfAllAnimations[i].animation.anipart[q].image.width,
+					listOfAllAnimations[i].animation.anipart[q].image.height,
+					rW*listOfAllAnimations[i]["widthInRects"]-imgOffset,
+					rH*listOfAllAnimations[i]["heightInRects"]-imgOffset,
+					listOfAllAnimations[i].animation.anipart[q].image.offset.xperc,
+					listOfAllAnimations[i].animation.anipart[q].image.offset.yperc,
+					listOfAllAnimations[i].animation.anipart[q].currentStatus.sx,
+					listOfAllAnimations[i].animation.anipart[q].currentStatus.sy,
+					listOfAllAnimations[i].animation.anipart[q].currentStatus.r,
+					listOfAllAnimations[i].animation.anipart[q].currentStatus.opacity)
+
+			}
+		}
+	}
+}
+
+function everyFrame (time) {
+
+	var widthOfBrowser = window.innerWidth
+	|| document.documentElement.clientWidth
+	|| document.body.clientWidth
+
+	var heightOfBrowser = window.innerHeight
+	|| document.documentElement.clientHeight
+	|| document.body.clientHeight
+
+	canvas.width = widthOfBrowser
+	canvas.height = heightOfBrowser
+
+	context.clearRect(0, 0, canvas.width, canvas.height)
+
+	var rectWidth = (widthOfBrowser-(widthOfBrowser*(leftBorderPerc+rightBorderPerc)))/rectNumHorizontal
+	var rectHeight = (heightOfBrowser-(heightOfBrowser*(topBorderPerc+bottomBorderPerc)))/rectNumVertical
+	//var rW = Math.ceil(rectWidth)
+	//var rH = Math.ceil(rectHeight)
+	rW = rectWidth
+	rH = rectHeight
+
+	for (var xx=0; xx < rectNumHorizontal; xx++) {
+			rectTable[xx] = []
+
+			for (var yy=0; yy < rectNumVertical; yy++){
+				var whereToDrawX = leftBorderPerc*widthOfBrowser+rectWidth*xx
+				var whereToDrawY = topBorderPerc*heightOfBrowser+rectHeight*yy
+				rectTable[xx][yy] = {x:whereToDrawX, y:whereToDrawY}
+			}
+	}
+
+	TWEEN.update(time)
+
+	drawAll()
+
+	window.requestAnimFrame (everyFrame)
+
+}
+
+	window.requestAnimFrame (everyFrame)
+
+</script>
+
+
+
+
+</body>
+</html>
